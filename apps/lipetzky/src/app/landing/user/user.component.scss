@@ -28,16 +28,16 @@
   &.before {
     transform: skew(0, -20deg);
 
-    .one {
+    &.one {
       z-index: 3;
     }
 
-    .two {
+    &.two {
       z-index: 2;
       margin: -3em -3em 0 2em;
     }
 
-    .three {
+    &.three {
       z-index: 1;
       margin: -6em -5em 0 0em;
     }
@@ -46,17 +46,17 @@
   &.after {
     transform: skew(0, 20deg);
 
-    .one {
+    &.one {
       z-index: 3;
     }
 
-    .two {
+    &.two {
 
       z-index: 2;
       margin: -3em 2em 0 -3em;
     }
 
-    .three {
+    &.three {
 
       z-index: 1;
       margin: -6em 0 0 -5em;
