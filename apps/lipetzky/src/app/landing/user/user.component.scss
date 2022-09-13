@@ -1,0 +1,153 @@
+// =========================
+// Carousel
+// =========================
+
+:host {
+  flex: 1;
+}
+
+.carousel {
+  position: relative;
+  height: 65%;
+  width: 100%;
+  border-radius: 0.5em;
+}
+
+.background-window {
+  width: 5em;
+  height: 44vh;
+  z-index: 6;
+  opacity: 0.5;
+
+  p {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    margin-left: 0.5em;
+  }
+
+  &.before {
+    transform: skew(0, -20deg);
+
+    .one {
+      z-index: 3;
+    }
+
+    .two {
+      z-index: 2;
+      margin: -3em -3em 0 2em;
+    }
+
+    .three {
+      z-index: 1;
+      margin: -6em -5em 0 0em;
+    }
+  }
+
+  &.after {
+    transform: skew(0, 20deg);
+
+    .one {
+      z-index: 3;
+    }
+
+    .two {
+
+      z-index: 2;
+      margin: -3em 2em 0 -3em;
+    }
+
+    .three {
+
+      z-index: 1;
+      margin: -6em 0 0 -5em;
+    }
+  }
+}
+
+.slide-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slide-image {
+  width: 100%;
+  object-fit: cover;
+  z-index: 10;
+  // zoom effect on hover
+  transition: transform 150ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
+  border-radius: 0.5em;
+}
+
+.main-stage {
+  border: 1px solid green;
+  width: 25em;
+  margin-top: -10em;
+
+  .name-plate {
+    width: 95%;
+    margin: 0 auto;
+    height: 14em;
+    color: white;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.slide:hover {
+  transform: scale(2);
+}
+
+// =========================
+// Next and Prev buttons
+// =========================
+.control {
+  border: none;
+  background-color: transparent;
+  outline: 0; // remove blue outline border, but make sure they are still focussable for accessibility
+  position: absolute;
+  top: 2.5em;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5em;
+  color: purple;
+  font-weight: bold;
+  font-size: 3em;
+  user-select: none;
+  height: 41%;
+  opacity: 80%;
+  // opacity effect on hover
+  transition: opacity 150ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
+  z-index: 15;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+
+  /* Position the buttons */
+  &.next {
+    right: 0;
+  }
+  &.prev {
+    left: 0;
+  }
+}
+
+/* style the arrows */
+.arrow {
+  display: block;
+  border-left: 0.1em solid yellow;
+  border-bottom: 0.1em solid yellow;
+  width: 0.5em;
+  height: 0.5em;
+
+  &.left {
+    transform: rotate(45deg);
+  }
+  &.right {
+    transform: rotate(225deg);
+  }
+}

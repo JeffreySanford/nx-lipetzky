@@ -5,7 +5,9 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/lipetzky",
         "index": "apps/lipetzky/src/index.html",
@@ -13,8 +15,14 @@
         "polyfills": "apps/lipetzky/src/polyfills.ts",
         "tsConfig": "apps/lipetzky/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/lipetzky/src/favicon.ico", "apps/lipetzky/src/assets"],
-        "styles": ["apps/lipetzky/src/styles.scss"],
+        "assets": [
+          "apps/lipetzky/src/favicon.ico",
+          "apps/lipetzky/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/lipetzky/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -74,12 +82,17 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": ["apps/lipetzky/**/*.ts", "apps/lipetzky/**/*.html"]
+        "lintFilePatterns": [
+          "apps/lipetzky/**/*.ts",
+          "apps/lipetzky/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/lipetzky"],
+      "outputs": [
+        "coverage/apps/lipetzky"
+      ],
       "options": {
         "jestConfig": "apps/lipetzky/jest.config.ts",
         "passWithNoTests": true
