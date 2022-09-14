@@ -50,4 +50,8 @@
     <button class="control next" (click)="onNextClick()">
         <span class="arrow right"></span>
     </button>
+
+    <div *ngFor="let footer of slides; let i = index;">
+        <button mat-raised-button color="accent">{{footer.name}}</button>
+    </div>
 </div>
