@@ -43,7 +43,7 @@ export class LandingComponent {
       headline: "Miouw",
       image:
         "https://i.pravatar.cc/150?img=2",
-      color: "brown"
+      color: "darkred"
     },
     {
       name: "Jennifer",
@@ -71,7 +71,7 @@ export class LandingComponent {
       headline: "For Your Current Mood",
       image:
         "assets/images/jack-carver.png",
-      color: "yellow"
+      color: "gold"
     },
     {
       name: "Alice",
