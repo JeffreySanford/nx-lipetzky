@@ -112,4 +112,16 @@ export class UsersComponent implements OnInit {
         return '';
     }
   }
+
+  setCurrentUser (currentUserIndex: number): void {
+    this.currentSlide = this.currentSlide + currentUserIndex;
+
+    if (this.currentSlide < 0) {
+      this.currentSlide = this.currentSlide + this.slides.length;
+      console.log('set currentSlide was too short, now: ' + this.currentSlide); 
+    } else if (this.currentSlide > this.slides.length -1) {
+      this.currentSlide = this.currentSlide - this.slides.length;
+      console.log('set currentSlide was too long, now: ' + this.currentSlide);
+    }
+  }
 }
