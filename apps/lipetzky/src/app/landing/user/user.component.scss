@@ -30,16 +30,19 @@
 
     &.one {
       z-index: 3;
+      margin-left: 0em;
     }
 
     &.two {
+
       z-index: 2;
-      margin: -3em -3em 0 2em;
+      margin: -3em -3em 0 -1em;
     }
 
     &.three {
+
       z-index: 1;
-      margin: -6em -5em 0 0em;
+      margin: -6em -2em 0 3em;
     }
   }
 

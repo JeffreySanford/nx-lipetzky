@@ -10,7 +10,7 @@ import { Slide } from './user/user.interface';
   styleUrls: ['./landing.component.scss'],
 })
 
-export class LandingComponent implements OnInit {
+export class LandingComponent {
 
   @Input() formarray!: FormArray;
   @Output() add = new EventEmitter();
@@ -41,13 +41,6 @@ export class LandingComponent implements OnInit {
 
   slides: Slide[] = [
     {
-      name: "Ryker",
-      headline: "For Your Current Mood",
-      image:
-        "https://i.pravatar.cc/150?img=1",
-      color: "pink"
-    },
-    {
       name: "Bob",
       headline: "Miouw",
       image:
@@ -76,6 +69,13 @@ export class LandingComponent implements OnInit {
       color: "darkblue"
     },
     {
+      name: "Ryker",
+      headline: "For Your Current Mood",
+      image:
+        "https://i.pravatar.cc/150?img=1",
+      color: "pink"
+    },
+    {
       name: "Alice",
       headline: "Miouw",
       image:
@@ -98,11 +98,9 @@ export class LandingComponent implements OnInit {
     }
   ];
 
-  selectedIndex: number = 0;
+  selectedIndex = 4;
   title = 'ngTemplateOutlet Example';
   mode = "card";
-
-  constructor() { }
 
   // TODO I think this is an event.value
   setAnimationType(type: any) {
@@ -116,35 +114,8 @@ export class LandingComponent implements OnInit {
     this.selectedIndex = index;
   }
 
-
-
-
-  items = [
-    {
-      header: 'Angular Tutorial',
-      content: 'The Angular Tutorial for Beginners & Professionals'
-    },
-    {
-      header: 'Typescript Tutorial',
-      content: 'The Complete Guide to Typescript'
-    },
-    {
-      header: 'Entity Framework Code Tutorial',
-      content: 'Learn Everything about Entity Framework Core'
-    },
-  ];
-
-  modeOptions = [
-    { mode: "card" },
-    { mode: "list" },
-  ];
-
   get template() {
     if (this.mode == "list") return this.listTemplate
     return this.cardTemplate
-  }
-
-  ngOnInit(): void {
-
   }
 }

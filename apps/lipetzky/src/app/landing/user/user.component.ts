@@ -58,9 +58,7 @@ export class UsersComponent implements OnInit {
   @Input() slides!: Slide[];
   @Input() animationType = AnimationType.Scale;
 
-  currentSlide = 0;
-
-  constructor() { }
+  currentSlide = 4;
 
   onPreviousClick() {
     const previous = this.currentSlide - 1;
@@ -84,25 +82,16 @@ export class UsersComponent implements OnInit {
     }
   }
 
-  getSlide(element: string, position: number, currentImagePosition: number): string {
-
-    let slidePosition = this.slides.length - currentImagePosition - position - 1;
-    
-    if (slidePosition > this.slides.length) {
-      debugger
-      slidePosition = this.slides.length - currentImagePosition - position;
-    }
-    console.log(position, currentImagePosition, slidePosition);
-
+  getSlide(element: string, position: number): string {
     switch (element) {
       case 'image':
-        return this.slides[slidePosition].image;
+        return this.slides[position].image;
         break;
       case 'name':
-        return this.slides[slidePosition].name;
+        return this.slides[position].name;
         break;
       case 'color':
-        return this.slides[slidePosition].color;
+        return this.slides[position].color;
         break;
       default:
         return '';
