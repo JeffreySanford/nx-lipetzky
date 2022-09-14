@@ -13,9 +13,7 @@ import { Slide } from './user/user.interface';
 export class LandingComponent {
 
   @Input() formarray!: FormArray;
-  @Output() add = new EventEmitter();
   @ViewChild('cardTemplate', { static: true }) cardTemplate!: TemplateRef<HTMLElement>;
-  @ViewChild('listTemplate', { static: true }) listTemplate!: TemplateRef<HTMLElement>;
   @ViewChild(UsersComponent) carousel!: UsersComponent;
 
   animationType = AnimationType.Scale;
@@ -115,7 +113,7 @@ export class LandingComponent {
   }
 
   get template() {
-    if (this.mode == "list") return this.listTemplate
+    // if (this.mode == "list") return this.listTemplate
     return this.cardTemplate
   }
 }

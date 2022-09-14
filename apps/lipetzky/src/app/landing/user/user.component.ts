@@ -83,6 +83,21 @@ export class UsersComponent implements OnInit {
   }
 
   getSlide(element: string, position: number): string {
+    console.log(position);
+    if (position < 0) {
+      position = position + this.slides.length;
+      console.log('position was too short, now: ' + position); 
+    } else if (position > this.slides.length -1) {
+      position = position - this.slides.length;
+      console.log('position was too long, now: ' + position);
+    }
+
+
+    console.log(element + ' at '+ position )
+    if(position < 0 || position > this.slides.length) {
+      debugger
+    }
+
     switch (element) {
       case 'image':
         return this.slides[position].image;
