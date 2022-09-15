@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "http://lipetzky.live:3333",
+    "target": "lipetzky.live",
     "secure": false
   }
 }
