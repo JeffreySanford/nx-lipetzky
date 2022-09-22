@@ -70,7 +70,7 @@ export class LandingComponent {
       name: "Ryker",
       headline: "For Your Current Mood",
       image:
-        "../../../../assets/images/jack-carver.png",
+        "assets/images/fallout-cartoon-guy.png",
       color: "gold"
     },
     {
