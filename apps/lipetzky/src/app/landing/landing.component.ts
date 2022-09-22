@@ -75,7 +75,7 @@ export class LandingComponent {
     },
     {
       name: "Alice",
-      headline: "Miouw",
+      headline: "Meow",
       image:
         "https://i.pravatar.cc/150?img=6",
       color: "green"
