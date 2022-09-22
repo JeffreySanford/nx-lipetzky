@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { UsersComponent } from './landing/user/user.component';
-
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,13 @@ import { UsersComponent } from './landing/user/user.component';
     LandingComponent,
     UsersComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, BrowserAnimationsModule, FormsModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    MatButtonModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

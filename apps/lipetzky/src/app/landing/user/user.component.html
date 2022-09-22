@@ -2,43 +2,69 @@
 <div class="carousel">
     <ng-container *ngFor="let slide of slides; let i = index">
         <span *ngIf="i === currentSlide" class="slide-container">
-            <div class="background-window before three"
-                [ngStyle]="{'background-color': getSlide('color',4)}">
-                <p>{{getSlide('name',4)}}</p>
-                <img [src]="getSlide('image', 4)" class="slide-image" [@slideAnimation]="animationType" />
+            <div class="background-window before three" (click)="setCurrentUser(+3)"
+                [ngStyle]="{'background-color': getSlide('color', currentSlide + 3)}">
+                <p>{{getSlide('name', currentSlide + 3)}}</p>
+                <img [src]="getSlide('image', currentSlide + 3)" class="slide-image"
+                    [@slideAnimation]="animationType" />
+                <button class="user-button before three" mat-raised-button (click)="setCurrentUser(+3)"
+                    [style.background-color]="getSlide('color', currentSlide + 3)">{{getSlide('name', currentSlide +
+                    3)}}</button>
             </div>
-            <div class="background-window before two"
-                [ngStyle]="{'background-color': getSlide('color',2)}">
-                <p>{{getSlide('name',2)}}</p>
-                <img [src]="getSlide('image', 2)" class="slide-image" [@slideAnimation]="animationType" />
+            <div class="background-window before two" (click)="setCurrentUser(+2)"
+                [ngStyle]="{'background-color': getSlide('color', currentSlide + 2)}">
+                <p>{{getSlide('name', currentSlide + 2)}}</p>
+                <img [src]="getSlide('image', currentSlide + 2)" class="slide-image"
+                    [@slideAnimation]="animationType" />
+                <button mat-raised-button class="user-button before two" mat-raised-button
+                    [style.background-color]="getSlide('color', currentSlide + 2)" (click)="setCurrentUser(+2)"
+                    color="accent">{{getSlide('name',
+                    currentSlide + 2)}}</button>
             </div>
-            <div class="background-window before one"
-                [ngStyle]="{'background-color': getSlide('color',3)}">
-                <p>{{getSlide('name', 3)}}</p>
-                <img [src]="getSlide('image', 3)" class="slide-image" [@slideAnimation]="animationType" />
+            <div class="background-window before one" (click)="setCurrentUser(+ 1)"
+                [ngStyle]="{'background-color': getSlide('color', currentSlide + 1)}">
+                <p>{{getSlide('name', currentSlide + 1)}}</p>
+                <img [src]="getSlide('image', currentSlide + 1)" class="slide-image"
+                    [@slideAnimation]="animationType" />
+                <button mat-raised-button class="user-button before one" mat-raised-button (click)="setCurrentUser(+1)"
+                [style.background-color]="getSlide('color', currentSlide + 1)">{{getSlide('name',
+                    currentSlide + 1)}}</button>
             </div>
-            <span class="main-stage" [ngStyle]="{'background-color': getSlide('color', 1)}">
-                <img [src]="getSlide('image', 1)" class="slide-image" [@slideAnimation]="animationType" />
+            <span class="main-stage slide" [ngStyle]="{'background-color': getSlide('color', currentSlide)}">
+                <img [src]="getSlide('image', currentSlide)" class="slide-image" [@slideAnimation]="animationType" />
                 <span class="name-plate">
-                    <p>{{slide.name}}</p>
+                    <h3>{{slide.name}}</h3>
                     <p>{{slide.headline}}</p>
                 </span>
+                <button mat-raised-button class="current user-button" mat-raised-button
+                [style.background-color]="getSlide('color', currentSlide)">{{getSlide('name', currentSlide)}}</button>
             </span>
-            <div class="background-window after one"
-                [ngStyle]="{'background-color': getSlide('color', 5)}">
-                <p>{{getSlide('name', 5)}}</p>
-                <img [src]="getSlide('image', 5)" class="slide-image" [@slideAnimation]="animationType" />
-            </div>
-            <div class="background-window after two"
-                [ngStyle]="{'background-color': getSlide('color', 6)}">
-                <p>{{getSlide('name', 6)}}</p>
-                <img [src]="getSlide('image' , 6)" class="slide-image"
+            <div class="background-window after one" (click)="setCurrentUser(-1)"
+                [ngStyle]="{'background-color': getSlide('color', currentSlide - 1)}">
+                <p>{{getSlide('name', currentSlide - 1)}}</p>
+                <img [src]="getSlide('image', currentSlide - 1)" class="slide-image"
                     [@slideAnimation]="animationType" />
+                <button mat-raised-button class="user-button after one" mat-raised-button (click)="setCurrentUser(-1)"
+                [style.background-color]="getSlide('color', currentSlide - 1)">{{getSlide('name', currentSlide -
+                    1)}}</button>
             </div>
-            <div class="background-window after three"
-                [ngStyle]="{'background-color': getSlide('color', 7)}">
-                <p>{{getSlide('name',7)}}</p>
-                <img [src]="getSlide('image', 7)" class="slide-image" [@slideAnimation]="animationType" />
+            <div class="background-window after two" (click)="setCurrentUser(-2)"
+                [ngStyle]="{'background-color': getSlide('color', currentSlide - 2)}">
+                <p>{{getSlide('name', currentSlide - 2)}}</p>
+                <img [src]="getSlide('image' , currentSlide - 2)" class="slide-image"
+                    [@slideAnimation]="animationType" />
+                <button mat-raised-button class="user-button after two" mat-raised-button (click)="setCurrentUser(-2)"
+                [style.background-color]="getSlide('color', currentSlide - 2)">{{getSlide('name', currentSlide -
+                    2)}}</button>
+            </div>
+            <div class="background-window after three" (click)="setCurrentUser(+3)"
+                [ngStyle]="{'background-color': getSlide('color', currentSlide - 3)}">
+                <p>{{getSlide('name', currentSlide - 3)}}</p>
+                <img [src]="getSlide('image', currentSlide - 3)" class="slide-image"
+                    [@slideAnimation]="animationType" />
+                <button mat-raised-button class="user-button after three" mat-raised-button (click)="setCurrentUser(-3)"
+                [style.background-color]="getSlide('color', currentSlide - 3)">{{getSlide('name', currentSlide -
+                    3)}}</button>
             </div>
         </span>
     </ng-container>

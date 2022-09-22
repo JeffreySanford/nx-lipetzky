@@ -13,9 +13,7 @@ import { Slide } from './user/user.interface';
 export class LandingComponent {
 
   @Input() formarray!: FormArray;
-  @Output() add = new EventEmitter();
   @ViewChild('cardTemplate', { static: true }) cardTemplate!: TemplateRef<HTMLElement>;
-  @ViewChild('listTemplate', { static: true }) listTemplate!: TemplateRef<HTMLElement>;
   @ViewChild(UsersComponent) carousel!: UsersComponent;
 
   animationType = AnimationType.Scale;
@@ -45,56 +43,56 @@ export class LandingComponent {
       headline: "Miouw",
       image:
         "https://i.pravatar.cc/150?img=2",
-      color: "darkblue"
+      color: "darkred"
     },
     {
       name: "Jennifer",
       headline: "In The Wilderness",
       image:
         "https://i.pravatar.cc/150?img=3",
-      color: "blue"
+      color: "firebrick"
     },
     {
       name: "Louisa",
       headline: "Focus On The Writing",
       image:
         "https://i.pravatar.cc/150?img=4",
-      color: "lightblue"
+      color: "red"
     },
     {
       name: "Ben",
       headline: "For Your Current Mood",
       image:
         "https://i.pravatar.cc/150?img=5",
-      color: "darkblue"
+      color: "orange"
     },
     {
       name: "Ryker",
       headline: "For Your Current Mood",
       image:
-        "https://i.pravatar.cc/150?img=1",
-      color: "pink"
+        "../../../../assets/images/jack-carver.png",
+      color: "gold"
     },
     {
       name: "Alice",
       headline: "Miouw",
       image:
         "https://i.pravatar.cc/150?img=6",
-      color: "plum"
+      color: "green"
     },
     {
       name: "Joseph",
       headline: "In The Wilderness",
       image:
         "https://i.pravatar.cc/150?img=7",
-      color: "magenta"
+      color: "darkgreen"
     },
     {
       name: "Ahmed",
       headline: "Focus On The Writing",
       image:
         "https://i.pravatar.cc/150?img=8",
-      color: "purple"
+      color: "violet"
     }
   ];
 
@@ -115,7 +113,7 @@ export class LandingComponent {
   }
 
   get template() {
-    if (this.mode == "list") return this.listTemplate
+    // if (this.mode == "list") return this.listTemplate
     return this.cardTemplate
   }
 }
