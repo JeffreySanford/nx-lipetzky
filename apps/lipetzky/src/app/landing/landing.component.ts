@@ -70,12 +70,12 @@ export class LandingComponent {
       name: "Ryker",
       headline: "For Your Current Mood",
       image:
-        "../../../../assets/images/jack-carver.png",
+        "assets/images/fallout-cartoon-guy.png",
       color: "gold"
     },
     {
       name: "Alice",
-      headline: "Miouw",
+      headline: "Meow",
       image:
         "https://i.pravatar.cc/150?img=6",
       color: "green"
