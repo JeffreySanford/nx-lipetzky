@@ -68,7 +68,7 @@ export class LandingComponent {
     },
     {
       name: "Ryker",
-      headline: "For Your Current Mood",
+      headline: "l",
       image:
         "assets/images/fallout-cartoon-guy.png",
       color: "gold"
